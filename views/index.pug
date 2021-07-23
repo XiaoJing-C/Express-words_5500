@@ -1,0 +1,47 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title 今天你背单词了吗
+    script(src='javascripts/home.js')
+    script(src='https://use.fontawesome.com/f29c95dc65.js')
+    link(rel='stylesheet' href='stylesheets/index.css')
+  body
+    .logo
+      img(src='images/logo.png' alt='')
+    .date-time-view
+      #time
+      .date
+        span#date
+    #search.search-box
+      input#input(type='text')
+      a(onclick='btn()')
+        i.fa.fa-search(aria-hidden='true')
+    script.
+      function show() {
+      //创建内置Date对象
+      var date = new Date();
+      var year = date.getFullYear().toString().padStart(4, "0");;
+      var month = (date.getMonth() + 1).toString().padStart(2, "0");
+      var day = date.getDate().toString().padStart(2, "0");
+      //获取当前小时分钟和秒
+      var hour = date.getHours().toString().padStart(2, "0");
+      var minute = date.getMinutes().toString().padStart(2, "0");
+      var second = date.getSeconds().toString().padStart(2, "0");
+      //选择id为time的标签
+      var element = document.getElementById("time");
+      var element1 = document.getElementById("date");
+      element.innerHTML = hour + ":" + minute + ":" + second;
+      element1.innerHTML = year + "年" + month + "月" + day + "日";
+      }
+      show();
+      //每间隔1000毫秒执行一次程序，保证时间动态显示
+      setInterval("show()", 1000);
+  
+      function btn(){
+      var x=document.getElementById("input");
+      location.href='http://localhost:3000/db/' + x.value
+      }
+    .footer CopyRight © 2021 XIAO_JING .All Right Reserved 

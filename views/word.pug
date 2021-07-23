@@ -1,0 +1,38 @@
+extends layout
+block content
+  each val,key in res
+    .logo
+      img(src='/images/logo.png' alt='')
+    #search.search-box
+      input#input(type='text')
+      a(onclick='btn()')
+        i.fa.fa-search(aria-hidden='true')
+    .main
+      .word
+        .word-cont
+          h1 !{val.word} 
+          .phonetic
+            span(lang='EN-US') !{val.sounds}
+          hr(style='margin:0px;background-color:rgb(40, 44, 52);height:0.5px;border:none;')
+        article.tabs
+          input#one(checked='' name='tabs' type='radio')
+          label(for='one') 释义
+          input#two(name='tabs' type='radio' value='Two')
+          label(for='two') 例句
+          input#three(name='tabs' type='radio')
+          label(for='three') 近、反义词
+          .panels
+            .panel
+              | !{val.meanings} 
+            .panel
+              | !{val.example} 
+            .panel
+              | !{val.syn_ant} 
+    .footer CopyRight © 2021 XIAO_JING .All Right Reserved 
+
+  script.
+    function btn(){
+    var x=document.getElementById("input");
+    location.href='http://localhost:3000/db/' + x.value
+    }
+
