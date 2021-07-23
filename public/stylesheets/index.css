@@ -1,0 +1,104 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image: url("../images/bg.jpg");
+    background-size:cover;
+  }
+
+.date-time-view {
+    text-align: center;
+    position: relative;
+}
+
+.date-time-view #time {
+    font-size: 80px;
+    color: #fefefe;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 120px;
+    text-shadow: 0 8px 12px rgb(0 0 0 / 10%);
+}
+.date-time-view .date {
+    margin-top: -40px;
+    margin-bottom: 20px;
+    vertical-align: baseline;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.5;
+}
+#search {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+input {
+    background: none;
+    border: none;
+    float: left;
+    outline: none;
+    border-radius: 28px;
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    -ms-border-radius: 28px;
+    -o-border-radius: 28px;
+    font-size: 20px;
+    text-align: center;
+    padding: 8px;
+    width: 0;
+    color: rgb(44, 44, 44);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+a{
+    margin-left: 2px;
+    float: right;
+    background: rgb(44, 44, 44);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    text-align: center;
+    line-height: 38px;
+    color: #fff;
+
+}
+
+#search:hover>input {
+    width: 240px;
+    border: rgb(44, 44, 44) solid 2px;
+
+}
+
+a:hover {
+    color: rgb(75, 132, 118);
+    cursor: pointer;
+}
+
+.footer {
+    /* height: 40px; */
+    line-height: 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    /* background: #333; */
+    color: #000;
+    /* font-family: Arial; */
+    font-size: 12px;
+    letter-spacing: 1px;
+}
